@@ -53,7 +53,7 @@ export const projects = [
     liveLink: "#",
 
     githubLink:
-      "https://github.com/Aditya01we",
+      "https://github.com/Aditya01we/Portfolio",
 
     imageAlt: "Portfolio Website",
   },
