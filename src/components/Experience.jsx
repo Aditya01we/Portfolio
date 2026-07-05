@@ -2,69 +2,57 @@ import Section from "./Section";
 import { experience } from "../data/content";
 
 export default function ExperienceBlock() {
-
   return (
-    <Section
-      id="experience"
-      title="Experience"
-      variant="default"
-    >
+    <Section id="experience" title="Experience" variant="default">
+      <div className="experience-section">
+        <header className="experience-section__header">
+          <p className="experience-section__subtitle">My Professional Journey</p>
+        </header>
 
-      <div className="experienceSection">
-
-        <div className="experienceSection__top">
-
-          <p className="experienceSection__smallTitle">
-            Work Experience
-          </p>
-
-          <h3 className="experienceSection__headline">
-            My Experience & Training
-          </h3>
-
-        </div>
-
-        <div className="expGrid">
-
-          {experience.map((item) => (
-
-            <div
-              key={item.role + item.years}
-              className="expCard"
+        <div className="experience-timeline">
+          {experience.map((item, index) => (
+            <article 
+              key={`${item.role}-${item.years}`} 
+              className="timeline-item"
             >
+              <div className="timeline-spine">
+                <div className="timeline-dot" aria-hidden="true" />
+                {index !== experience.length - 1 && (
+                  <div className="timeline-line" aria-hidden="true" />
+                )}
+              </div>
 
-              <div className="expCard__top">
-
-                <div className="expCard__icon">
-                  💼
+      
+              <div className="timeline-card">
+                <div className="timeline-card-header">
+                  <div className="timeline-meta">
+                    <h3 className="timeline-role">{item.role}</h3>
+                    <span className="timeline-company">{item.company}</span>
+                    
+                    {item.location && (
+                      <span className="timeline-location">
+                        <span className="geo-icon"></span> {item.location}
+                      </span>
+                    )}
+                  </div>
+                  
+                  <span className="timeline-badge">{item.years}</span>
                 </div>
 
-                <span className="expCard__years">
-                  {item.years}
-                </span>
-
+                {Array.isArray(item.description) ? (
+                  <ul className="timeline-bullet-list">
+                    {item.description.map((point, i) => (
+                      <li key={i}>{point}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="timeline-fallback-desc">{item.description}</p>
+                )}
               </div>
-
-              <div className="expCard__company">
-                {item.company}
-              </div>
-
-              <h3 className="expCard__title">
-                {item.role}
-              </h3>
-
-              <p className="expCard__desc">
-                {item.description}
-              </p>
-
-            </div>
-
+            </article>
           ))}
-
         </div>
-
       </div>
-
     </Section>
   );
 }

@@ -2,116 +2,114 @@ import Section from "./Section";
 import { skills } from "../data/content";
 
 export default function Skills() {
+  const groups = {
+    "📱 Mobile App Development": [],
+    "🌐 Frontend": [],
+    "☁️ Backend & Services": [],
+    "🗄️ Database & Backend": [],
+    "🛠 Development Tools": [],
+    "🚀 Development Concepts": [],
+  };
 
-  const barSkills = skills.filter((skill) => {
-    return !skill.ring;
-  });
+  for (const s of skills) {
+    const label = s.label.toLowerCase();
 
-  const ringSkills = skills.filter((skill) => {
-    return skill.ring;
-  });
+    // 📱 Mobile Development
+    if (
+      label.includes("react native") ||
+      label.includes("react navigation") ||
+      label.includes("redux") ||
+      label.includes("responsive ui")
+    ) {
+      groups["📱 Mobile App Development"].push(s);
+    }
+
+    // 🌐 Frontend
+    else if (
+      label.includes("html") ||
+      label.includes("css") ||
+      label.includes("bootstrap") ||
+      (label.includes("react") && !label.includes("native")) ||
+      label.includes("javascript")
+    ) {
+      groups["🌐 Frontend"].push(s);
+    }
+
+    // ☁️ Backend & Services
+    else if (
+      label.includes("firebase") ||
+      label.includes("firestore") ||
+      label.includes("authentication") ||
+      label.includes("axios") ||
+      label.includes("rest api") ||
+      label.includes("asyncstorage")
+    ) {
+      groups["☁️ Backend & Services"].push(s);
+    }
+
+    // 🗄️ Database & Backend
+    else if (
+      label.includes("mongodb") ||
+      label.includes("node") ||
+      label.includes("express") ||
+      label.includes("json")
+    ) {
+      groups["🗄️ Database & Backend"].push(s);
+    }
+
+    // 🛠 Development Tools
+    else if (
+      label.includes("git") ||
+      label.includes("github") ||
+      label.includes("android studio") ||
+      label.includes("vs code") ||
+      label.includes("postman") ||
+      label.includes("figma")
+    ) {
+      groups["🛠 Development Tools"].push(s);
+    }
+
+    // 🚀 Development Concepts
+    else {
+      groups["🚀 Development Concepts"].push(s);
+    }
+  }
+
+  const activeGroups = Object.entries(groups).filter(
+    ([, items]) => items.length > 0
+  );
 
   return (
-    <Section
-      id="skills"
-      title="My Skills"
-      variant="default"
-    >
-
+    <Section id="skills" title="Technical Skills" variant="default">
       <div className="skillsSection">
-
         <div className="skillsSection__top">
-
           <p className="skillsSection__smallTitle">
-            Professional Skills
-          </p>
-
-          <h3 className="skillsSection__headline">
             Technologies & Tools I Work With
-          </h3>
-
+          </p>
         </div>
 
         <div className="skills">
+          {activeGroups.map(([groupName, groupSkills]) => (
+            <div key={groupName} className="skillsGroup">
+              <h4 className="skillsGroup__title">{groupName}</h4>
 
-          <div className="skills__bars">
-
-            {barSkills.map((skill) => (
-
-              <div
-                key={skill.label}
-                className="skillRow"
-              >
-
-                <div className="skillRow__top">
-
-                  <h4 className="skillRow__name">
-                    {skill.label}
-                  </h4>
-
-                  <span className="skillRow__percent">
-                    {skill.percent}%
-                  </span>
-
-                </div>
-
-                <div className="skillRow__track">
-
+              <div className="skillsGroup__grid">
+                {groupSkills.map((skill) => (
                   <div
-                    className="skillRow__fill"
-                    style={{
-                      width: `${skill.percent}%`,
-                    }}
-                  ></div>
-
-                </div>
-
-              </div>
-
-            ))}
-
-          </div>
-
-          <div className="skills__rings">
-
-            {ringSkills.map((skill) => (
-
-              <div
-                key={skill.label}
-                className="ringWrap"
-              >
-
-                <div
-                  className="ring"
-                  style={{
-                    "--value": skill.percent,
-                  }}
-                >
-
-                  <div className="ring__inner">
-
-                    <h4 className="ring__title">
+                    key={skill.label}
+                    className="skillPill"
+                    title={skill.label}
+                  >
+                    <span className="skillPill__label">
                       {skill.label}
-                    </h4>
-
-                    <span className="ring__percent">
-                      {skill.percent}%
                     </span>
-
                   </div>
-
-                </div>
-
+                ))}
               </div>
-
-            ))}
-
-          </div>
-
+            </div>
+          ))}
         </div>
-
       </div>
-
     </Section>
   );
 }

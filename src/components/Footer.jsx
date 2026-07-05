@@ -1,84 +1,37 @@
 import { profile } from "../data/profile";
 
 export default function Footer() {
-
   return (
     <footer className="footer">
-
-      <div className="container footer__inner">
-
-        <div className="footer__top">
-
+      <div className="footer__inner">
+        
+        <div className="footer__brand">
           <h3 className="footer__logo">
-            Aditya<span>Bhardwaj</span>
+            Aditya Bhardwaj
           </h3>
-
           <p className="footer__text">
-            Frontend & React Native Developer creating
-            modern responsive websites and applications.
+            Frontend & React Native Developer creating modern, high-performance,
+            and responsive applications.
           </p>
 
         </div>
 
-        <div className="footer__social">
-
-          <a
-            href={profile.social.linkedin}
-            className="footer__socialLink"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn
-          </a>
-
-          <a
-            href={profile.social.github}
-            className="footer__socialLink"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>
-
-          <a
-            href={profile.social.facebook}
-            className="footer__socialLink"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Facebook
-          </a>
-
-          <a
-            href={profile.social.twitter}
-            className="footer__socialLink"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Twitter
-          </a>
-
-          <a
-            href={profile.social.instagram}
-            className="footer__socialLink"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Instagram
-          </a>
-
-        </div>
+        <nav className="footer__nav">
+          <ul className="footer__links">
+            <li><a href="#home" className="footer__link">Home</a></li>
+            <li><a href="#about" className="footer__link">About</a></li>
+            <li><a href="#projects" className="footer__link">Projects</a></li>
+            <li><a href="#contact" className="footer__link">Contact</a></li>
+          </ul>
+        </nav>
 
         <div className="footer__bottom">
-
           <p className="footer__copy">
-            Copyright © 2026 {profile.name}. All Rights Reserved
+            Copyright © 2026 {profile.name}. All Rights Reserved.
           </p>
-
         </div>
 
       </div>
-
     </footer>
   );
 }

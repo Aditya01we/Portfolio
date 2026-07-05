@@ -16,8 +16,10 @@ export const profile = {
 
   experience: "1 Year",
 
+  degree: "B.Tech (CSE)",
+
   about:
-    "Hi, I am Aditya Bhardwaj from Uttar Pradesh. I am a passionate Frontend and React Native Developer who enjoys creating responsive websites and mobile applications. I am a quick learner and always ready to improve my skills by working on real projects and modern technologies.",
+    "I'm a Mobile App Developer specializing in React Native and JavaScript, with experience building production-quality applications for Android and cross-platform environments. My technical expertise includes Firebase, Redux Toolkit, REST APIs, authentication, AsyncStorage, and modern UI development. I'm passionate about writing clean, scalable code and delivering seamless mobile experiences with performance and usability at the core.",
 
   social: {
 

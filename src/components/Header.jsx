@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { profile } from "../data/profile";
 
 const navItems = [
   {
@@ -9,10 +8,6 @@ const navItems = [
   {
     id: "about",
     label: "About",
-  },
-  {
-    id: "education",
-    label: "Education",
   },
   {
     id: "projects",
@@ -29,11 +24,9 @@ const navItems = [
 ];
 
 export default function Header() {
-
   const [openMenu, setOpenMenu] = useState(false);
 
   function scrollToSection(id) {
-
     const section = document.getElementById(id);
 
     if (section) {
@@ -47,20 +40,13 @@ export default function Header() {
 
   return (
     <>
-
       <header className="topbar">
-
         <div className="container topbar__inner">
-
           <div className="brand">
-            Port
-            <span className="brand__accent">
-              folio
-            </span>
+            A<span className="brand__accent">B</span>
           </div>
 
           <nav className="nav">
-
             {navItems.map((item) => (
               <a
                 key={item.id}
@@ -74,30 +60,20 @@ export default function Header() {
                 {item.label}
               </a>
             ))}
-
           </nav>
 
-          <button
-            className="menuBtn"
-            onClick={() => setOpenMenu(!openMenu)}
-          >
+          <button className="menuBtn" onClick={() => setOpenMenu(!openMenu)}>
             <span></span>
             <span></span>
             <span></span>
           </button>
-
         </div>
-
       </header>
 
       {openMenu && (
-
         <div className="mobileMenu">
-
           <div className="container mobileMenu__inner">
-
             <div className="mobileMenu__grid">
-
               {navItems.map((item) => (
                 <a
                   key={item.id}
@@ -111,19 +87,14 @@ export default function Header() {
                   {item.label}
                 </a>
               ))}
-
             </div>
 
             <div className="mobileMenu__footer">
               © {new Date().getFullYear()} {profile.name}
             </div>
-
           </div>
-
         </div>
-
       )}
-
     </>
   );
 }

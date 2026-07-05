@@ -8,28 +8,23 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function App() {
-
   useEffect(() => {
-
     AOS.init({
       duration: 1000,
       once: true,
       offset: 100,
       easing: "ease-in-out",
     });
-
   }, []);
 
   return (
     <div className="appRoot">
-
       <Toaster
         position="top-right"
         reverseOrder={false}
@@ -65,7 +60,6 @@ export default function App() {
       <Header />
 
       <main>
-
         <div data-aos="fade-up">
           <Hero />
         </div>
@@ -78,18 +72,11 @@ export default function App() {
           <Skills />
         </div>
 
-        <div data-aos="fade-up">
-          <Projects />
-        </div>
-
-        <div data-aos="fade-left">
-          <Education />
-        </div>
-
         <div data-aos="zoom-in-up">
           <Experience />
         </div>
 
+      <Projects />
         <div data-aos="flip-left">
           <Certifications />
         </div>
@@ -97,11 +84,9 @@ export default function App() {
         <div data-aos="fade-up">
           <Contact />
         </div>
-
       </main>
 
       <Footer />
-
     </div>
   );
 }
