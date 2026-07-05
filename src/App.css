@@ -170,14 +170,17 @@ body::before {
 }
 
 /* ================= MOBILE MENU ================= */
+/* ================= MOBILE MENU ================= */
 
 .mobileMenu {
   position: fixed;
-  top: 70px;
+  top: 68px; /* Adjust to match exact height of your topbar */
   left: 0;
   width: 100%;
-  background: white;
-  border-bottom: 1px solid var(--border);
+  /* Match the dark theme background instead of harsh solid white */
+  background: rgba(11, 18, 32, 0.98); 
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(34, 197, 94, 0.22);
   z-index: 99;
 }
 
@@ -192,19 +195,27 @@ body::before {
 
 .mobileMenu__link {
   text-decoration: none;
-  color: var(--text);
-  padding: 12px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  /* Make sure text explicitly falls back to a light color or your theme variable */
+  color: var(--text, #ffffff); 
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
   font-weight: 600;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.mobileMenu__link:hover {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: var(--accent);
 }
 
 .mobileMenu__footer {
-  margin-top: 15px;
-  color: var(--muted);
+  margin-top: 20px;
+  text-align: center;
+  color: #94a3b8; /* Balanced subtle color for footer text */
   font-size: 14px;
 }
-
 /* ================= HERO ================= */
 .hero {
   padding: 25px 0 90px;

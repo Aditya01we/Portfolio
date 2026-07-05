@@ -1,26 +1,11 @@
 import { useState } from "react";
 
 const navItems = [
-  {
-    id: "home",
-    label: "Home",
-  },
-  {
-    id: "about",
-    label: "About",
-  },
-  {
-    id: "projects",
-    label: "Projects",
-  },
-  {
-    id: "certifications",
-    label: "Certifications",
-  },
-  {
-    id: "contact",
-    label: "Contact",
-  },
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "projects", label: "Projects" },
+  { id: "certifications", label: "Certifications" },
+  { id: "contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -28,13 +13,9 @@ export default function Header() {
 
   function scrollToSection(id) {
     const section = document.getElementById(id);
-
     if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-      });
+      section.scrollIntoView({ behavior: "smooth" });
     }
-
     setOpenMenu(false);
   }
 
@@ -90,7 +71,7 @@ export default function Header() {
             </div>
 
             <div className="mobileMenu__footer">
-              © {new Date().getFullYear()} {profile.name}
+              © {new Date().getFullYear()} Aditya Bhardwaj
             </div>
           </div>
         </div>
