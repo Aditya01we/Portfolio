@@ -1,7 +1,7 @@
 import Section from "./Section";
 import { profile } from "../data/profile";
 import { Button } from "./Button";
-import profileImage from "../assets/hero.jpeg";
+import profileImage from "../assets/Hero.jpeg";
 import resume from "../assets/AdityasUpdated.pdf";
 
 export default function About() {
