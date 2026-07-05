@@ -69,7 +69,7 @@ npm run preview
 🌐 Live Demo
 
 Portfolio:
-https://aditya-portfolio-0309.vercel.app/
+https://adityabhardwaj-portfolio.vercel.app/
 
 📬 Contact
 
