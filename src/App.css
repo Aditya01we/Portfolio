@@ -492,13 +492,18 @@ body::before {
   font-size: 13px;
   line-height: 1.75;
   color: rgba(212, 212, 212, 0.9);
-  overflow: hidden;
   max-height: none;
+  /* Allows inner horizontal scrolling without breaking layout structure */
+  overflow-x: auto;
+  white-space: pre;
 }
 
 .codeEditor__line {
   display: flex;
   padding: 0 16px;
+  /* Ensures the full long line string forces container expansion inside scroll view */
+  width: max-content;
+  min-width: 100%;
 }
 
 .codeEditor__line:hover {
@@ -513,6 +518,8 @@ body::before {
   margin-right: 12px;
   border-right: 1px solid rgba(255, 255, 255, 0.06);
   user-select: none;
+  /* Prevents line numbers from compressing on tight mobile spaces */
+  flex-shrink: 0;
 }
 /* VS Code Dark Style Token Syntax Coloring */
 .tok-comment {
