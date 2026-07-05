@@ -381,24 +381,10 @@ body::before {
   max-width: 430px;
 }
 
-/* .hero__circle{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    135deg,
-    rgba(56,189,248,0.18),
-    rgba(168,85,247,0.06),
-    transparent
-  );
-  border-radius:40px;
-  transform:rotate(8deg);
-} */
-
 .hero__codeBox {
   max-width: 480px;
 }
 
-/* ================= WINDOWS STYLE CODE EDITOR ================= */
 @keyframes float {
   0% {
     transform: translateY(0px);
@@ -492,18 +478,14 @@ body::before {
   font-size: 13px;
   line-height: 1.75;
   color: rgba(212, 212, 212, 0.9);
-  max-height: none;
-  /* Allows inner horizontal scrolling without breaking layout structure */
-  overflow-x: auto;
-  white-space: pre;
+  height: auto;
+  overflow: hidden;
 }
 
 .codeEditor__line {
   display: flex;
   padding: 0 16px;
-  /* Ensures the full long line string forces container expansion inside scroll view */
-  width: max-content;
-  min-width: 100%;
+  flex-wrap: wrap;
 }
 
 .codeEditor__line:hover {
@@ -518,10 +500,9 @@ body::before {
   margin-right: 12px;
   border-right: 1px solid rgba(255, 255, 255, 0.06);
   user-select: none;
-  /* Prevents line numbers from compressing on tight mobile spaces */
   flex-shrink: 0;
 }
-/* VS Code Dark Style Token Syntax Coloring */
+
 .tok-comment {
   color: #6a9955;
   font-style: italic;
@@ -568,11 +549,12 @@ body::before {
   }
 
   .hero__content {
-    order: 2;
+    order: 1;
   }
 
   .hero__media {
-    order: 1;
+    order: 2;
+    width: 100%;
   }
 
   .hero__title {
@@ -605,6 +587,7 @@ body::before {
 
   .hero__codeBox {
     max-width: 100%;
+    width: 100%;
     padding: 0 10px;
   }
 
@@ -614,7 +597,18 @@ body::before {
   }
 
   .codeEditor__code {
-    max-height: 250px;
+    max-height: none;
+    font-size: 11px;
+  }
+
+  .codeEditor__lineNumber {
+    width: 18px;
+    padding-right: 8px;
+    margin-right: 8px;
+  }
+
+  .codeEditor__line {
+    padding: 0 10px;
   }
 
   .hero__title {

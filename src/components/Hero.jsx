@@ -36,7 +36,7 @@ export default function Hero() {
           </h2>
 
           <p className="hero__desc">
-Dedicated to creating beautiful, performant, and scalable mobile applications that solve real-world problems and deliver exceptional user experiences.
+            Dedicated to creating beautiful, performant, and scalable mobile applications that solve real-world problems and deliver exceptional user experiences.
           </p>
           <div className="hero__stats">
             <div className="hero__stat">
