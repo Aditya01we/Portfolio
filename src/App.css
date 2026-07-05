@@ -170,17 +170,14 @@ body::before {
 }
 
 /* ================= MOBILE MENU ================= */
-/* ================= MOBILE MENU ================= */
 
 .mobileMenu {
   position: fixed;
-  top: 68px; /* Adjust to match exact height of your topbar */
+  top: 70px;
   left: 0;
   width: 100%;
-  /* Match the dark theme background instead of harsh solid white */
-  background: rgba(11, 18, 32, 0.98); 
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(34, 197, 94, 0.22);
+  background: white;
+  border-bottom: 1px solid var(--border);
   z-index: 99;
 }
 
@@ -195,27 +192,19 @@ body::before {
 
 .mobileMenu__link {
   text-decoration: none;
-  /* Make sure text explicitly falls back to a light color or your theme variable */
-  color: var(--text, #ffffff); 
-  padding: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 14px;
+  color: var(--text);
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
   font-weight: 600;
-  text-align: center;
-  transition: 0.2s;
-}
-
-.mobileMenu__link:hover {
-  background: rgba(34, 197, 94, 0.1);
-  border-color: var(--accent);
 }
 
 .mobileMenu__footer {
-  margin-top: 20px;
-  text-align: center;
-  color: #94a3b8; /* Balanced subtle color for footer text */
+  margin-top: 15px;
+  color: var(--muted);
   font-size: 14px;
 }
+
 /* ================= HERO ================= */
 .hero {
   padding: 25px 0 90px;
@@ -503,18 +492,13 @@ body::before {
   font-size: 13px;
   line-height: 1.75;
   color: rgba(212, 212, 212, 0.9);
+  overflow: hidden;
   max-height: none;
-  /* Allows inner horizontal scrolling without breaking layout structure */
-  overflow-x: auto;
-  white-space: pre;
 }
 
 .codeEditor__line {
   display: flex;
   padding: 0 16px;
-  /* Ensures the full long line string forces container expansion inside scroll view */
-  width: max-content;
-  min-width: 100%;
 }
 
 .codeEditor__line:hover {
@@ -529,8 +513,6 @@ body::before {
   margin-right: 12px;
   border-right: 1px solid rgba(255, 255, 255, 0.06);
   user-select: none;
-  /* Prevents line numbers from compressing on tight mobile spaces */
-  flex-shrink: 0;
 }
 /* VS Code Dark Style Token Syntax Coloring */
 .tok-comment {
