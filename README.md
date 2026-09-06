@@ -71,15 +71,7 @@ npm run preview
 Portfolio:
 https://adityabhardwaj-portfolio.vercel.app/
 
-📬 Contact
 
-Feel free to connect with me for collaborations, freelance projects, or job opportunities.
-
-💼 LinkedIn
-💻 GitHub
-📧 Email
-
-(Add your LinkedIn, GitHub, and email links here.)
 
 👨‍💻 Developed By
 
