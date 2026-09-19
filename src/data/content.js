@@ -32,6 +32,18 @@ import PF5 from "../assets/screenshots/PortFolio/PF5.png";
 import PFBanner from "../assets/screenshots/PortFolio/PFBanner.png";
 export const experience = [
   {
+    role: "Mobile App Developer – React Native",
+    company: "PyroMedia",
+    years: "Sep 2026 – Present",
+    location: "📍 Noida, Uttar Pradesh",
+    description: [
+      "Developing high-performance, cross-platform mobile applications using React Native.",
+      "Designing and implementing scalable UI components and modern mobile architectural patterns.",
+      "Integrating REST APIs, third-party libraries, and state management solutions.",
+      "Collaborating with cross-functional teams to build, test, and deploy production-ready mobile features."
+    ]
+  },
+  {
     role: "React Native Developer Intern",
     company: "X-Strategy Services Pvt. Ltd.",
     years: "Jan 2026 – Mar 2026",
